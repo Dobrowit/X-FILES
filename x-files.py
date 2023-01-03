@@ -294,23 +294,23 @@ ascii_letters = {
         " #   ",
         "  #  ",
     ],
-    '2': [
-        "  #  ",
-        "   # ",
-        "    #",
-        "##  #",
-        "    #",
-        "   # ",
-        "  #  ",
+    '_': [
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "#####",
     ],
-    '1': [
-        "     ",
-        "   # ",
-        "   # ",
-        "     ",
-        "   # ",
-        "   # ",
-        "     ",
+    '3': [
+        " ### ",
+        "#   #",
+        "    #",
+        "  ## ",
+        "    #",
+        "#   #",
+        " ### ",
     ],
 }
     
@@ -360,11 +360,11 @@ def execmd(command):
         print("Error", f"Command failed: {e}")
         return ""
     
-text = "X-FILES"
+text = "AI_DEVS_3"
 matrix = generate_ascii_text(text)
 enumerated_matrix = matrix_to_list(matrix)
 
-start_date = date(2023, 11, 26)
+start_date = date(2023, 1, 1)
 num_days = 364
 dates = [start_date + timedelta(days=i) for i in range(num_days)]
 date_mapping = {i + 1: dates[i] for i in range(num_days)}
@@ -378,7 +378,7 @@ for element in enumerated_matrix:
     #print(element, data, stan)
     print(i)
     if stan == "#":
-        for f in range(50):
+        for f in range(5): # jasność
             execmd(f"sudo timedatectl set-time '{data} {czas}'")
             #print(f"sudo timedatectl set-time '{data} {czas}'")
             file = f"file_{data}-{f}.txt"
