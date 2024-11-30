@@ -388,3 +388,5 @@ for element in enumerated_matrix:
             execmd(f"git commit -m {text}")
     i = i + 1
 execmd(f"sudo timedatectl set-ntp true")
+
+# GIT_AUTHOR_DATE={date} GIT_COMMITTER_DATE={date} git commit --allow-empty -m "X-FILES" > /dev/null
